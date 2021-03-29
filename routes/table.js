@@ -3,11 +3,11 @@ var router = express.Router();
 var sql = require('mysql'); //
 
 var sqlConfig = {
-    host: 'localhost',
-    port: '32000',
-    user: 'root',
-    password: 'root',
-    database: 'database'
+    host: 'pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    port: '3306',
+    user: 'xuvwzq6wygw6t2gv',
+    password: 'znabbsq170mffx5r',
+    database: 'hprxc6b8d6lbq5gf'
 }
 
 /* GET users listing. */

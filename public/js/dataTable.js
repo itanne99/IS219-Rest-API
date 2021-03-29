@@ -5,7 +5,8 @@
             {"data" : "first_name"},
             {"data" : "last_name"},
             {"data" : "email"},
-            {"data" : "address"},
+            {"data" : "phone"},
+            {"data" : "street_address"},
             {"data" : "city"},
             {"data" : "state"}
         ]
