@@ -1,15 +1,18 @@
 const path = require('path');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+    watch: true,
+
     mode: 'development',
     devtool: 'source-map',
     context: path.resolve(__dirname, 'src'),
     entry: './main.js',
     output: {
-        path: path.resolve(__dirname, 'public')
+        path: path.resolve(__dirname, 'public'),
+        filename: 'js/bundle.js'
     },
     module: {
         rules: [
@@ -41,6 +44,20 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css'
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src'),
+                    globOptions: {
+                        ignore: [
+                            '**/js/'
+                        ]
+                    }
+                }
+            ],
+            options:{
+                concurrency: 100
+            }
         })
     ]
 }
