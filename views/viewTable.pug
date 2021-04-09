@@ -12,4 +12,13 @@ block content
                 th City
                 th State
         tbody
-    script(src='js/dataTable.js')
+            for person in personList
+                 tr
+                     td #{person.first_name}
+                     td #{person.last_name}
+                     td #{person.email}
+                     td #{person.phone}
+                     td #{person.street_address}
+                     td #{person.city}
+                     td #{person.state}
+    //script(src='js/dataTable.js')
